@@ -13,6 +13,8 @@ const app = express()
 const geocode = require('./utils/geocode')
 const weather = require('./utils/weather')
 
+const port = process.env.PORT || 3000
+
 // Config
 const MAPBOX = {
     url     : 'https://api.mapbox.com/geocoding/v5/mapbox.places/', // + 'Los%20Angeles.json?
@@ -126,6 +128,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000')
+app.listen(port, () => {
+    console.log('Listening on port ' + port)
 })
